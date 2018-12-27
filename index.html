@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>Pics Filtering</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -53,15 +53,45 @@
                 <h5 class="my-3">OR</h5>
                 <div class="dragBox col-10 p-5 mx-auto">
                     <h4>Drag and Drop image here</h4>
-                    <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()" id="uploadFile" />
+                    <input type="file" onChange="dragNdrop(event)" ondragover="drag()" ondrop="drop()" id="uploadFile" />
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="download">
+    <section>
         <div class="container">
-            <div id="preview" class="p-3"></div>
+            <div id="preview">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="btn-container d-flex flex-wrap flex-row justify-content-center align-items-center">
+                <button class="btn btn-deep-orange">inkwell</button>
+                <button class="btn btn-deep-orange">aden</button>
+                <button class="btn btn-deep-orange">perpetua</button>
+                <button class="btn btn-deep-orange">reyes</button>
+                <button class="btn btn-deep-orange">gingham</button>
+                <button class="btn btn-deep-orange">toaster</button>
+                <button class="btn btn-deep-orange">walden</button>
+                <button class="btn btn-deep-orange">hudson</button>
+                <button class="btn btn-deep-orange">earlybird</button>
+                <button class="btn btn-deep-orange">mayfair</button>
+                <button class="btn btn-deep-orange">lofi</button>
+                <button class="btn btn-deep-orange">_1977</button>
+                <button class="btn btn-deep-orange">brooklyn</button>
+                <button class="btn btn-deep-orange">xpro2</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+           <canvas id="canvas"></canvas>
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="container d-flex justify-content-center align-items-center">
+            <button id="download" class="btn btn-download btn-mdb-color col-12 col-lg-6 disabled">Download</button>
         </div>
     </section>
 
