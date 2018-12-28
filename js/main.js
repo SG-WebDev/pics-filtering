@@ -22,8 +22,14 @@ function convertImageToCanvas() {
     var canvas = $('#canvas');
     var canvasWidth = (image.width());
     var canvasHeight = (image.height());
-    canvas.attr({width:canvasWidth*2,height:canvasHeight*2}).css({width:'100%',height:'auto'});
+    var ratio = canvasWidth / canvasHeight;
+    canvas.attr({width:canvasWidth*ratio,height:canvasHeight*ratio}).css({width: canvasWidth ,height:canvasHeight});
     var ctx = canvas[0].getContext("2d");
+    ctx.filter = getComputedStyle(image[0]).getPropertyValue('filter');
+    var calcWidth = canvas.attr('width');
+    var calcHeight = canvas.attr('height');
+    console.log(calcHeight);
+    console.log(calcWidth);
     ctx.drawImage(image[0], 0, 0);
     return canvas;
 }
@@ -49,9 +55,7 @@ function downloadCanvas(canvas, filename) {
 $('.btn-container button').on('click', function () {
     $('#download').removeClass('disabled');
     $('#preview img').removeClass();
-    $('#canvas').removeClass();
     var filterClass = $(this).text();
     $('#preview img').addClass(filterClass);
-    $('#canvas').addClass(filterClass);
     convertImageToCanvas();
 });
