@@ -53,7 +53,9 @@ function downloadCanvas(canvas, filename) {
     }
 }
 $('.btn-container button').on('click', function () {
-    $('#download').removeClass('disabled');
+    if($('#preview img').length !=0) {
+        $('#download').removeClass('disabled');
+    }
     $('#preview img').removeClass();
     var filterClass = $(this).text();
     $('#preview img').addClass(filterClass);
