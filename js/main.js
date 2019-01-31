@@ -22,8 +22,14 @@ function convertImageToCanvas() {
     var canvas = $('#canvas');
     var canvasWidth = (image.width());
     var canvasHeight = (image.height());
-    var ratio = canvasWidth / canvasHeight;
-    canvas.attr({width:canvasWidth*ratio,height:canvasHeight*ratio}).css({width: canvasWidth ,height:canvasHeight});
+    var ratioHorizontal = canvasWidth / canvasHeight;
+    var ratioVertical = canvasHeight / canvasWidth;
+    if(canvasWidth > canvasHeight) {
+        canvas.attr({width:canvasWidth*ratioHorizontal,height:canvasHeight*ratioHorizontal});
+    }
+    else if(canvasWidth < canvasHeight) {
+        canvas.attr({width:canvasHeight*ratioHorizontal,height:canvasWidth*ratioVertical});
+    }
     var ctx = canvas[0].getContext("2d");
     ctx.filter = getComputedStyle(image[0]).getPropertyValue('filter');
     var calcWidth = canvas.attr('width');
